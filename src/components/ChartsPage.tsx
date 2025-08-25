@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 import { BarChart3, Download, FileText, Calendar, Trash2, TrendingUp } from 'lucide-react';
@@ -128,7 +128,7 @@ export function ChartsPage() {
     ).join('\n');
 
     const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(url);
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
     a.download = showAllData ? 'all_tank_report.txt' : `${selectedVessel}_${selectedTank}_report.txt`;
