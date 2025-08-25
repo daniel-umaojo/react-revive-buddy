@@ -27,6 +27,7 @@ export interface TankData {
   vessel: string;
   tank: string;
   date: string;
+  time: string;
   volume: number;
   density: number;
   fluid: string;
