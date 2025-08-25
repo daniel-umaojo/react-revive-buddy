@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { X } from 'lucide-react';
 import { TankSettings } from '../context/DataContext';
 import { useTheme } from '../context/ThemeContext';

@@ -49,8 +49,8 @@ export function InputVolumePage() {
   const selectedTankConfig = selectedTankIndex >= 0 ? tankSettings[selectedTankIndex] : null;
 
   // Convert input values to base units (SI)
-  const pressureInPa = pressure * PRESSURE_UNITS[pressureUnit].factor;
-  const fuelLevelInM = fuelLevel * LENGTH_UNITS[lengthUnit].factor;
+  const pressureInPa = pressure * (PRESSURE_UNITS as any)[pressureUnit].factor;
+  const fuelLevelInM = fuelLevel * (LENGTH_UNITS as any)[lengthUnit].factor;
 
   const calculateVolume = () => {
     if (!selectedTankConfig || fuelLevelInM <= 0) return 0;
@@ -92,7 +92,7 @@ export function InputVolumePage() {
   const fillColor = fillStatusObj.color;
 
   // Convert display values from base units
-  const displayVolume = currentVolume / VOLUME_UNITS[volumeUnit].factor;
+  const displayVolume = currentVolume / (VOLUME_UNITS as any)[volumeUnit].factor;
 
   const handleSaveData = () => {
     if (selectedTankIndex < 0 || !selectedTankConfig) {
@@ -291,7 +291,7 @@ export function InputVolumePage() {
                   value={fuelLevel}
                   onChange={(e) => setFuelLevel(parseFloat(e.target.value))}
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  max={selectedTankConfig ? selectedTankConfig.maxLevel / LENGTH_UNITS[lengthUnit].factor : undefined}
+                  max={selectedTankConfig ? selectedTankConfig.maxLevel / (LENGTH_UNITS as any)[lengthUnit].factor : undefined}
                 />
               </div>
               {selectedTankConfig && fuelLevelInM > selectedTankConfig.maxLevel && (
