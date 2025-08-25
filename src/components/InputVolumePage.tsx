@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 import { Database, Thermometer, Activity, Gauge as GaugeIcon, Calculator, User, BookOpen, Eye, Info, X } from 'lucide-react';

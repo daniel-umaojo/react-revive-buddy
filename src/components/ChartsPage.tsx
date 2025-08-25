@@ -59,6 +59,8 @@ export function ChartsPage() {
       .map(data => ({
         date: data.date,
         time: data.time || '00:00:00',
+        vessel: data.vesselName,
+        tank: data.tankName,
         volume: data.volume,
         temperature: data.temperature,
         pressure: data.pressure / 1000, // Convert to kPa for better display

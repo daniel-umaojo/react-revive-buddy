@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
-import { Gauge, Lock, UserPlus, Mail, Shield, Settings as SettingsIcon } from 'lucide-react';
+import { Lock, UserPlus, Mail, Shield, Settings as SettingsIcon } from 'lucide-react';
 import { AdminPanel } from './AdminPanel';
 import { Logo } from './Logo';
 
