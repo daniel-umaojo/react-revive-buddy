@@ -1,4 +1,3 @@
-import React from 'react';
 import { useData } from '../context/DataContext';
 import { Activity, Beaker, Thermometer, Gauge as GaugeIcon } from 'lucide-react';
 
