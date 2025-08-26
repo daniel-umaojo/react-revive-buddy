@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useData, TankSettings, FluidDatabase } from '../context/DataContext';
 import { getFluidColor, getDefaultFluidDatabase } from '../constants/fluidConstants';
@@ -71,7 +71,7 @@ export function SettingsPage() {
     // Update vessel name for all tanks if changed
     if (field === 'vesselName') {
       updated.forEach(tank => {
-        tank.vesselName = value;
+        tank.vesselName = value as string;
       });
     }
     

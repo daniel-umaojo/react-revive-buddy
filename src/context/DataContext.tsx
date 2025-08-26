@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { useAuth } from './AuthContext';
 import { supabase } from '../lib/supabase';
 import { getDefaultFluidDatabase, FluidDatabase, FluidRange } from '../constants/fluidConstants';
@@ -27,6 +27,7 @@ export interface TankData {
   vessel: string;
   tank: string;
   date: string;
+  time: string;
   volume: number;
   density: number;
   fluid: string;
@@ -138,7 +139,7 @@ export function DataProvider({ children }: { children: ReactNode }) {
     
     try {
       // Sync tank data to Supabase
-      const { error } = await supabaseClient
+      const { error } = await (supabaseClient as any)
         .from('tank_data')
         .upsert(tankData.map(data => ({
           ...data,

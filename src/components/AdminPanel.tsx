@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useData } from '../context/DataContext';
 import { useTheme } from '../context/ThemeContext';
@@ -88,7 +88,7 @@ export function AdminPanel({ setIsAdminAuthenticated, setAdminEmail, setAdminPas
   };
 
   const exportAllData = () => {
-    const allUserData = [];
+    const allUserData: any[] = [];
     
     // Collect all user data
     users.forEach(user => {

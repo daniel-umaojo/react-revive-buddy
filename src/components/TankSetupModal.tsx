@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useData, TankSettings } from '../context/DataContext';
 import { X, Settings } from 'lucide-react';
 

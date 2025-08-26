@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 interface ChartDataPoint {
   date: string;
@@ -135,13 +135,12 @@ export function ScatterPlot({ data, chartType = 'volume', onDataPointClick }: Sc
               <circle
                 cx={getX(originalIndex)}
                 cy={getY(point.value)}
-                r="5"
+                r="8"
                 fill="none"
                 stroke="#3b82f6"
                 strokeWidth="1"
                 opacity="0.3"
                 style={{ pointerEvents: 'none' }}
-                r="8"
               />
             </g>
           );
@@ -167,13 +166,12 @@ export function ScatterPlot({ data, chartType = 'volume', onDataPointClick }: Sc
               <circle
                 cx={getX(originalIndex)}
                 cy={getY(point.value)}
-                r="5"
+                r="8"
                 fill="none"
                 stroke="#f97316"
                 strokeWidth="1"
                 opacity="0.3"
                 style={{ pointerEvents: 'none' }}
-                r="8"
               />
             </g>
           );
